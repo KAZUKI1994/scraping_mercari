@@ -5,7 +5,10 @@ application up and running.
 
 Things you may want to cover:
 
-* Ruby version 2.2.3
+* Ruby version
+
+$ ruby -v  
+ruby 2.2.3p319 (2016-04-26 revision 54774) [x86_64-darwin16]
 * System dependencies
 
 * Configuration
@@ -15,6 +18,10 @@ Things you may want to cover:
 * Database initialization
 
 * How to run the test suite
+```
+$ bundle exec whenever --update-crontab
+[write] crontab file updated
+```
 
 * Services (job queues, cache servers, search engines, etc.)
 
@@ -43,8 +50,8 @@ rails serverでlocalhostからのみの接続
 
  論理名 | 物理名 | データ種別 | データ型 | NOT NULL制約 | DEFAULT値 | 備考
 ------------ | ------------- | ------------- | ------------- | ------------- | ------------- | -------------
-商品ID | id | 数値 |  | Y | auto increment
-商品コード | code | 文字列 | integer | Y | |
+商品ID | id | 数値 | integer | Y | auto increment
+商品コード | code | 文字列 | string | Y | |
 商品詳細URL | url | 文字列 | string |  | |
 商品名 | name | 文字列 | string |  | |
 商品金額 | price | 数値 | decimal |  | |
