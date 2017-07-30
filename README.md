@@ -10,7 +10,7 @@ Things you may want to cover:
 
 * Configuration
 
-* Database creation
+* Database creation sqlite3
 
 * Database initialization
 
@@ -35,4 +35,30 @@ https://www.mercari.com/jp/category/959/
 rails serverでlocalhostからのみの接続
 * mercariへ過度なアクセスを行いご迷惑を掛けないように。
 
+## System Basic Design
+### Table設計
+
+#### テーブル項目一覧
+##### 商品テーブル items
+
+ 論理名 | 物理名 | データ種別 | データ型 | NOT NULL制約 | DEFAULT値 | 備考
+------------ | ------------- | ------------- | ------------- | ------------- | ------------- | -------------
+商品ID | id | 数値 |  | Y | auto increment
+商品コード | code | 文字列 | integer | Y | |
+商品詳細URL | url | 文字列 | string |  | |
+商品名 | name | 文字列 | string |  | |
+商品金額 | price | 数値 | decimal |  | |
+税額 | tax_price | 数値 | decimal |  | |
+SOLD OUT | soldout | ブール | boolean |  | |
+
+##### 商品画像テーブル item_photos
+
+ 論理名 | 物理名 | データ種別 | データ型 | NOT NULL制約 | DEFAULT値 | 備考
+------------ | ------------- | ------------- | ------------- | ------------- | ------------- | -------------
+商品画像ID | id | 数値 | integer | Y | auto increment
+商品画像URL | url | 文字列 | string | Y | |
+商品ID | item_id | 数値| integer | Y | |
+
+
+[https://github.com/KAZUKI1994/scraping_mercari/issues/1](Issue#1 設計：商品情報を格納するテーブル項目一覧)
 
